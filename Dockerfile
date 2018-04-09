@@ -12,6 +12,7 @@ RUN apk update && \
     pip install --no-cache-dir --upgrade pip cffi && \
     pip install --no-cache-dir ansible==${ANSIBLE_VERSION} && \
     apk del build-dependencies && \
-    rm -rf /var/cache/apk/* 
+    rm -rf /var/cache/apk/* && \
+    ansible --version
 
 ENTRYPOINT []
