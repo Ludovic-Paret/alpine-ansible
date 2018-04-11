@@ -1,6 +1,7 @@
 FROM alpine:3.7
 
 ENV ANSIBLE_VERSION "2.5.0"
+ENV ANSIBLE-LINT_VERSION "3.4.21"
 
 ARG RUNTIME_DEPS="python py-pip openssl openssh-client git"
 ARG BUILD_DEPS="python-dev libffi-dev openssl-dev build-base"
@@ -10,7 +11,7 @@ RUN apk update && \
     apk add --no-cache ${RUNTIME_DEPS} && \
     apk add --no-cache --virtual build-dependencies ${BUILD_DEPS} && \
     pip install --no-cache-dir --upgrade pip cffi && \
-    pip install --no-cache-dir ansible==${ANSIBLE_VERSION} && \
+    pip install --no-cache-dir ansible==${ANSIBLE_VERSION} ansible-lint==${ANSIBLE-LINT_VERSION} && \
     apk del build-dependencies && \
     rm -rf /var/cache/apk/* && \
     ansible --version
