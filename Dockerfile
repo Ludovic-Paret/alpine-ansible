@@ -7,6 +7,8 @@ ENV ANSIBLE_REVIEW_VERSION "v0.13.5"
 ARG RUNTIME_DEPS="python py-pip openssl openssh-client git"
 ARG BUILD_DEPS="python-dev libffi-dev openssl-dev build-base"
 
+COPY ./config.ini /root/.config/ansible-review/config.ini
+
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache ${RUNTIME_DEPS} && \
