@@ -14,7 +14,7 @@ RUN apk update && \
     apk add --no-cache ${RUNTIME_DEPS} && \
     apk add --no-cache --virtual build-dependencies ${BUILD_DEPS} && \
     cp /usr/bin/envsubst /usr/local/bin/envsubst && \
-    pip install --no-cache-dir --upgrade pip cffi && \
+    pip install --no-cache-dir --upgrade pip cffi jinja2 && \
     pip install --no-cache-dir 	ansible==${ANSIBLE_VERSION} \
 				ansible-lint==${ANSIBLE_LINT_VERSION} \
 				ansible-review==${ANSIBLE_REVIEW_VERSION} && \
