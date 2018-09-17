@@ -1,8 +1,8 @@
 FROM alpine:3.8
 
-ENV ANSIBLE_VERSION "2.6.3"
+ENV ANSIBLE_VERSION "2.6.4"
 ENV ANSIBLE_LINT_VERSION "3.4.23"
-ENV ANSIBLE_REVIEW_VERSION "0.13.7"
+ENV ANSIBLE_REVIEW_VERSION "0.13.8"
 
 ARG RUNTIME_DEPS="python py-pip openssl openssh-client git py-dnspython libintl"
 ARG BUILD_DEPS="python-dev libffi-dev openssl-dev build-base gettext"
